@@ -142,3 +142,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Resume Modal Functions
+function openResumeModal() {
+    const modal = document.getElementById('resumeModal');
+    if (modal) {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeResumeModal(event) {
+    const modal = document.getElementById('resumeModal');
+    if (!modal) return;
+    // If called from backdrop click, only close if clicking outside the modal box
+    if (event && event.target !== modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('resumeModal');
+        if (modal && modal.classList.contains('open')) {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+});

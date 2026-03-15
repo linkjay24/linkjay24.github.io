@@ -42,7 +42,7 @@
                 <h1 class="title reveal delay-1">Jaykumar K. Chaudhary</h1>
                 <p class="intro reveal delay-2">Results-driven Civil Engineer with experience in infrastructure development, construction supervision, and renovation project management. Skilled in planning, executing, and supervising projects with a strong focus on quality, safety, and cost efficiency.</p>
                 <div class="cta-group reveal delay-3">
-                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> View Resume</a>
+                    <a href="#" class="btn btn-primary" id="viewResumeBtn" onclick="openResumeModal(); return false;"><i class="fas fa-file-pdf"></i> View Resume</a>
                     <a href="http://www.linkedin.com/in/jay247" target="_blank" class="btn btn-secondary glass"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
@@ -280,6 +280,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="resume-modal" onclick="closeResumeModal(event)">
+        <div class="resume-modal-box">
+            <div class="resume-modal-header">
+                <span class="resume-modal-title"><i class="fas fa-file-pdf"></i> Jaykumar K. Chaudhary — Resume</span>
+                <div class="resume-modal-actions">
+                    <a href="resume.pdf" download="Jaykumar_Chaudhary_Resume.pdf" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download</a>
+                    <button class="resume-close-btn" onclick="closeResumeModal()"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="resume-modal-body">
+                <iframe src="resume.pdf" title="Resume" class="resume-iframe"></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
